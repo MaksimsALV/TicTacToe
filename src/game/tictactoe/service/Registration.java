@@ -13,13 +13,13 @@ public class Registration {
             System.out.println("Player 1 will play: X | Player 2 will play: O");
 
             //register player 1
-            System.out.println("Register player 1");
+            System.out.println("Enter player 1 name");
             System.out.print("Input:");
             String playerOne = r.nextLine();
             PlayerStorage.playersList.add(new PlayerConstructor(playerOne, 'X'));
 
             //register player 2
-            System.out.println("Register player 2");
+            System.out.println("Enter player 2 name");
             System.out.print("Input:");
             String playerTwo = r.nextLine();
             PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
