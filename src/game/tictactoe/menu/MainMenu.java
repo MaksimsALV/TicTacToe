@@ -2,7 +2,7 @@ package game.tictactoe.menu;
 
 import java.util.Scanner;
 
-public class Interface {
+public class MainMenu {
     public static void menu() {
         Scanner ms = new Scanner(System.in);
         System.out.println("=================================");

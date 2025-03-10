@@ -14,7 +14,7 @@ public class Stats {
             System.out.print("Input:");
             int choice = Integer.parseInt(s.nextLine());
             if (choice == 0) {
-                Interface.menu();
+                MainMenu.menu();
                 break;
             }
         }
