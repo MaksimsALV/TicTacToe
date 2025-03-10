@@ -1,6 +1,6 @@
-package main;
+package game.tictactoe;
 
-public class Main {
+public class Run {
     public static void main(String[] args) {
 
     }
