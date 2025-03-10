@@ -1,6 +1,4 @@
-package game.tictactoe.repository;
-
-import game.tictactoe.menu.Interface;
+package game.tictactoe.menu;
 
 import java.util.Scanner;
 
