@@ -25,5 +25,6 @@ public class Registration {
             PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
         }
         //todo game method here and break; because i want to start Game after players are registered
+        //todo when game is played, we add a winner +1 and store it in PlayerStats hashman list (String, Integer)
     }
 }
