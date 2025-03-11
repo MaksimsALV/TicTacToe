@@ -9,13 +9,4 @@ public class PlayerConstructor {
         this.playerName = playerName;
         this.playerSymbol = playerSymbol;
     }
-
-    //todo do i need this ?
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public char getPlayerSymbol() {
-        return playerSymbol;
-    }
 }
