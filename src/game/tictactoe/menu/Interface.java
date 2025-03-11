@@ -13,7 +13,7 @@ public class Interface {
         System.out.println("=================================");
         while (true) {
             System.out.println("Please choice one of the following options:");
-            System.out.println("1. Play");
+            System.out.println("1. New Game");
             System.out.println("2. Stats");
             System.out.println("0. Exit");
             System.out.print("Input:");
