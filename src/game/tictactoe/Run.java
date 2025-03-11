@@ -1,9 +1,9 @@
 package game.tictactoe;
 
-import game.tictactoe.menu.MainMenu;
+import game.tictactoe.menu.Interface;
 
 public class Run {
     public static void main(String[] args) {
-        MainMenu.menu();
+        Interface.menu();
     }
 }

@@ -1,11 +1,11 @@
 package game.tictactoe.menu;
 
 import game.tictactoe.service.Registration;
-import game.tictactoe.service.Stats;
+import game.tictactoe.service.Score;
 
 import java.util.Scanner;
 
-public class MainMenu {
+public class Interface {
     public static void menu() {
         Scanner ms = new Scanner(System.in);
         System.out.println("=================================");
@@ -23,7 +23,7 @@ public class MainMenu {
                 break;
             }
             if (choice == 2) {
-                Stats.viewStats();
+                Score.viewStats();
                 break;
             }
             if (choice == 0) {
