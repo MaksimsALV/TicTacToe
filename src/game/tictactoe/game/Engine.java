@@ -31,16 +31,15 @@ public class Engine {
             }
             printBoard();
             System.out.print("Input:");
-            int choice = ge.nextInt();
+            int choice = Integer.parseInt(ge.nextLine());
 
             //todo update board
             playerOneTurn = !playerOneTurn;
         }
     }
     public static void printBoard() { //matrix look, first number is row; second number is column
-        System.out.println("" + board[1][1] + " | " + board[1][2] + " | " + board[1][3]);
-        System.out.println("" + board[2][1] + " | " + board[2][2] + " | " + board[2][3]);
-        System.out.println("" + board[3][1] + " | " + board[3][2] + " | " + board[3][3]);
-
+        System.out.println("" + board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
+        System.out.println("" + board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
+        System.out.println("" + board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
     }
 }
