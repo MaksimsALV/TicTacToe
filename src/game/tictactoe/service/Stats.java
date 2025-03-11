@@ -1,5 +1,6 @@
-package game.tictactoe.menu;
+package game.tictactoe.service;
 
+import game.tictactoe.menu.MainMenu;
 import game.tictactoe.repository.PlayerStats;
 
 import java.util.Scanner;
