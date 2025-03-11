@@ -1,6 +1,6 @@
 package game.tictactoe.game;
 
-import game.tictactoe.game.logic.Logic;
+import game.tictactoe.game.logic.BoardLogic;
 import game.tictactoe.repository.PlayerStorage;
 
 import java.util.Scanner;
@@ -25,12 +25,12 @@ public class Engine {
             } else {
                 System.out.println("Player 2 turn");
             }
-            Logic.printBoard();
+            BoardLogic.printBoard();
             System.out.print("Input:");
             int choice = Integer.parseInt(ge.nextLine());
 
             char symbol = playerOneTurn ? PlayerStorage.playersList.get(0).playerSymbol : PlayerStorage.playersList.get(1).playerSymbol;
-            Logic.updateBoard(choice, symbol);
+            BoardLogic.updateBoard(choice, symbol);
             playerOneTurn = !playerOneTurn;
         }
     }
