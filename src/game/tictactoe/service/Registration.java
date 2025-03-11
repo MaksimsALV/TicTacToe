@@ -1,5 +1,6 @@
 package game.tictactoe.service;
 
+import game.tictactoe.game.Engine;
 import game.tictactoe.repository.PlayerConstructor;
 import game.tictactoe.repository.PlayerStorage;
 
@@ -23,8 +24,10 @@ public class Registration {
             System.out.print("Input:");
             String playerTwo = r.nextLine();
             PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
+
+            Engine.gameEngine();
+            break;
         }
-        //todo game method here and break; because i want to start Game after players are registered
         //todo when game is played, we add a winner +1 and store it in PlayerStats hashman list (String, Integer)
     }
 }
