@@ -3,6 +3,7 @@ package game.tictactoe.game;
 import game.tictactoe.game.logic.BoardLogic;
 import game.tictactoe.game.logic.WinnerLogic;
 import game.tictactoe.menu.Interface;
+import game.tictactoe.repository.PlayerStats;
 import game.tictactoe.repository.PlayerStorage;
 
 import java.util.Scanner;

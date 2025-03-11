@@ -1,5 +1,8 @@
 package game.tictactoe.game.logic;
 
+import game.tictactoe.repository.PlayerStats;
+import game.tictactoe.repository.PlayerStorage;
+
 public class WinnerLogic {
     //todo will have to move this to WinnerLogic later
     public static boolean winningCondition(char symbol) {
@@ -25,9 +28,13 @@ public class WinnerLogic {
 
     public static void defineWinner() {
         if (winningCondition('X')) {
-            System.out.println("Player 1 (X) Wins!");
+            String winnerName = PlayerStorage.playersList.get(0).playerName;
+            System.out.println(winnerName + " Wins!");
+            PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1);
         } else if (winningCondition('O')) {
-            System.out.println("Player 2 (O) Wins!");
+            String winnerName = PlayerStorage.playersList.get(1).playerName;
+            System.out.println(winnerName + " Wins!");
+            PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1);
         }
     }
 }
