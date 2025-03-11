@@ -27,14 +27,15 @@ public class WinnerLogic {
     }
 
     public static void defineWinner() {
+        //todo i want to do .get(winnerName) +1), but for this to work, i need to assign 0 value to players during Registration layer, else Java bricks.
         if (winningCondition('X')) {
             String winnerName = PlayerStorage.playersList.get(0).playerName;
             System.out.println(winnerName + " Wins!");
-            PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1);
+            PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1); //firstly we put winnerName, then we call it with default value of 0 and then to modify with +1
         } else if (winningCondition('O')) {
             String winnerName = PlayerStorage.playersList.get(1).playerName;
             System.out.println(winnerName + " Wins!");
-            PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1);
+            PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1); //firstly we put winnerName, then we call it with default value of 0 and then to modify with +1
         }
     }
 }
