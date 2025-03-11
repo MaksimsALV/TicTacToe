@@ -34,12 +34,15 @@ public class Engine {
             BoardLogic.updateBoard(choice, symbol);
             playerOneTurn = !playerOneTurn;
 
+            //if we have a winner, it says that, breaks the loop and goes one layer down to Final Board block
             if (BoardLogic.winningCondition(symbol)) {
                 BoardLogic.defineWinner();
                 break;
             }
 
         }
+
+        //Final board block
         System.out.println("Final board: ");
         BoardLogic.printBoard();
         //todo need to add the score to PlayerScore here somehere later
