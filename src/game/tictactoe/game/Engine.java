@@ -48,7 +48,7 @@ public class Engine {
         System.out.println("" + board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
     }
 
-    // this updates our board after each player input
+    // this updates our board after each player input, if player puts input on any of the numbers, we replace that board locator with symbol
     public static void updateBoard(int choice, char symbol) { //method to update matrix based on inputs
         if (choice == 1) board[0][0] = symbol;
         else if (choice == 2) board[0][1] = symbol;
