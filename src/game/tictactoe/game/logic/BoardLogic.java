@@ -30,10 +30,14 @@ public class BoardLogic {
 
         //todo will have to move this to WinnerLogic later
         public static boolean winningCondition(char symbol) {
-            return (board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) || //todo doesnt seems to work without ||, what it does?
+            if ((board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) || //todo doesnt seems to work without ||, what it does?
                     (board[1][0] == symbol && board[1][1] == symbol && board[1][2] == symbol) ||
-                    (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol);
+                    (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol)) {
+                return true;
+            }
+            return false;
         }
+
         //todo this doesnt seems to do anything
         public static void defineWinner() {
             if (winningCondition('X')) {

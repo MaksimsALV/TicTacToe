@@ -1,6 +1,7 @@
 package game.tictactoe.game;
 
 import game.tictactoe.game.logic.BoardLogic;
+import game.tictactoe.menu.Interface;
 import game.tictactoe.repository.PlayerStorage;
 
 import java.util.Scanner;
@@ -32,6 +33,28 @@ public class Engine {
             char symbol = playerOneTurn ? PlayerStorage.playersList.get(0).playerSymbol : PlayerStorage.playersList.get(1).playerSymbol;
             BoardLogic.updateBoard(choice, symbol);
             playerOneTurn = !playerOneTurn;
+
+            if (BoardLogic.winningCondition(symbol)) {
+                BoardLogic.defineWinner();
+                break;
+            }
+
+        }
+        System.out.println("Final board: ");
+        BoardLogic.printBoard();
+        //todo need to add the score to PlayerScore here somehere later
+
+        System.out.println("==============================================");
+        System.out.println("Another round?");
+        System.out.println("1. Play again");
+        System.out.println("0. Return back to main menu");
+        System.out.print("Input:");
+        int choice = Integer.parseInt(ge.nextLine());
+        if (choice == 1) {
+            gameEngine();
+        }
+        if (choice == 0) {
+            Interface.menu();
         }
     }
 }
