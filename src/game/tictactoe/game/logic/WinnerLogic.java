@@ -4,7 +4,6 @@ import game.tictactoe.repository.PlayerStats;
 import game.tictactoe.repository.PlayerStorage;
 
 public class WinnerLogic {
-    //todo will have to move this to WinnerLogic later
     public static boolean winningCondition(char symbol) {
         //horizontal check
         if ((BoardLogic.board[0][0] == symbol && BoardLogic.board[0][1] == symbol && BoardLogic.board[0][2] == symbol) || // " || " -is logical OR operator

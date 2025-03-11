@@ -9,7 +9,6 @@ import game.tictactoe.repository.PlayerStorage;
 import java.util.Scanner;
 
 public class Engine {
-
     public static void gameEngine() {
         Scanner ge = new Scanner(System.in);
         System.out.println("Lets play!");
@@ -46,8 +45,7 @@ public class Engine {
         //Final board block
         System.out.println("Final board: ");
         BoardLogic.printBoard();
-        //todo need to add the score to PlayerScore here somehere later
-        //todo then clean relaunch of gameEngine() to start everything from zero again.
+        //todo  clean relaunch of gameEngine() to start everything from zero again. if selecting Play Again
 
         System.out.println("==============================================");
         System.out.println("Another round?");
@@ -56,6 +54,7 @@ public class Engine {
         System.out.print("Input:");
         int choice = Integer.parseInt(ge.nextLine());
         if (choice == 1) {
+            BoardLogic.resetBoard();
             gameEngine();
         }
         if (choice == 0) {
