@@ -28,34 +28,5 @@ public class BoardLogic {
         else if (choice == 9) board[2][2] = symbol;
     }
 
-        //todo will have to move this to WinnerLogic later
-        public static boolean winningCondition(char symbol) {
-        //horizontal check
-        if ((board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) || //todo doesnt seems to work without ||, what it does?
-                (board[1][0] == symbol && board[1][1] == symbol && board[1][2] == symbol) ||
-                (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol)) {
-            return true;
-        }
-        //vertical check
-        if ((board[0][0] == symbol && board[1][0] == symbol && board[2][0] == symbol) ||
-                (board[0][1] == symbol && board[1][1] == symbol && board[2][1] == symbol) ||
-                (board[0][2] == symbol && board[1][2] == symbol && board[2][2] == symbol)) {
-            return true;
-        }
-        //side check
-        if ((board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) ||
-                (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol)) {
-            return true;
-        }
-        return false;
-    }
 
-        //todo this doesnt seems to do anything
-        public static void defineWinner() {
-            if (winningCondition('X')) {
-                System.out.println("Player 1 (X) Wins!");
-            } else if (winningCondition('O')) {
-                System.out.println("Player 2 (O) Wins!");
-            }
-        }
 }

@@ -1,6 +1,7 @@
 package game.tictactoe.game;
 
 import game.tictactoe.game.logic.BoardLogic;
+import game.tictactoe.game.logic.WinnerLogic;
 import game.tictactoe.menu.Interface;
 import game.tictactoe.repository.PlayerStorage;
 
@@ -35,8 +36,8 @@ public class Engine {
             playerOneTurn = !playerOneTurn;
 
             //if we have a winner, it says that, breaks the loop and goes one layer down to Final Board block
-            if (BoardLogic.winningCondition(symbol)) {
-                BoardLogic.defineWinner();
+            if (WinnerLogic.winningCondition(symbol)) {
+                WinnerLogic.defineWinner();
                 break;
             }
 
@@ -46,6 +47,7 @@ public class Engine {
         System.out.println("Final board: ");
         BoardLogic.printBoard();
         //todo need to add the score to PlayerScore here somehere later
+        //todo then clean relaunch of gameEngine() to start everything from zero again.
 
         System.out.println("==============================================");
         System.out.println("Another round?");
