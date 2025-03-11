@@ -7,7 +7,7 @@ public class WinnerLogic {
     //todo will have to move this to WinnerLogic later
     public static boolean winningCondition(char symbol) {
         //horizontal check
-        if ((BoardLogic.board[0][0] == symbol && BoardLogic.board[0][1] == symbol && BoardLogic.board[0][2] == symbol) || //todo doesnt seems to work without ||, what it does?
+        if ((BoardLogic.board[0][0] == symbol && BoardLogic.board[0][1] == symbol && BoardLogic.board[0][2] == symbol) || // " || " -is logical OR operator
                 (BoardLogic.board[1][0] == symbol && BoardLogic.board[1][1] == symbol && BoardLogic.board[1][2] == symbol) ||
                 (BoardLogic.board[2][0] == symbol && BoardLogic.board[2][1] == symbol && BoardLogic.board[2][2] == symbol)) {
             return true;
@@ -27,7 +27,6 @@ public class WinnerLogic {
     }
 
     public static void defineWinner() {
-        //todo i want to do .get(winnerName) +1), but for this to work, i need to assign 0 value to players during Registration layer, else Java bricks.
         if (winningCondition('X')) {
             String winnerName = PlayerStorage.playersList.get(0).playerName;
             System.out.println(winnerName + " Wins!");

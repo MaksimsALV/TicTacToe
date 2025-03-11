@@ -28,6 +28,5 @@ public class Registration {
             Engine.gameEngine();
             break;
         }
-        //todo when game is played, we add a winner +1 and store it in PlayerStats hashman list (String, Integer)
     }
 }

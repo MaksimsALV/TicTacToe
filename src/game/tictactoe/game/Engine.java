@@ -41,7 +41,6 @@ public class Engine {
                 WinnerLogic.defineWinner();
                 break;
             }
-
         }
 
         //Final board block

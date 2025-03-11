@@ -1,6 +1,7 @@
 package game.tictactoe.game.logic;
 
 public class BoardLogic {
+
     // this is our board
     public static char[][] board = {
             {'1', '2', '3'},
@@ -27,6 +28,4 @@ public class BoardLogic {
         else if (choice == 8) board[2][1] = symbol;
         else if (choice == 9) board[2][2] = symbol;
     }
-
-
 }
