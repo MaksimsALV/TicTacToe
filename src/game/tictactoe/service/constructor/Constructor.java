@@ -16,8 +16,8 @@ public class Constructor {
     //Annette constructor
     public static class AnnetteConstructor extends PlayerConstructor{
 
-        public AnnetteConstructor(char playerSymbol) {
-            super("Annette", playerSymbol);
+        public AnnetteConstructor() {
+            super("Annette", 'O');
         }
     }
 }
