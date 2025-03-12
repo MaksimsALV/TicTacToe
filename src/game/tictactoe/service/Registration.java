@@ -10,10 +10,6 @@ import java.util.Scanner;
 
 public class Registration {
     public static void register() {
-        PlayerStats.playerStats.clear(); //clearing storage when New Game is launched (goes via register method, so we wipe everything we had before every new game)
-        PlayerStorage.playersList.clear(); //clearing storage when New Game is launched (goes via register method, so we wipe everything we had before every new game)
-        BoardLogic.resetBoard(); //resetting board too (full clean start)
-
         Scanner r = new Scanner(System.in);
         while (true) {
             System.out.println("To play the game you have to register two players!");

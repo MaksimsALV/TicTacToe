@@ -1,6 +1,6 @@
 package game.tictactoe.menu;
 
-import game.tictactoe.service.Registration;
+import game.tictactoe.service.NewGame;
 import game.tictactoe.service.Score;
 
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class Interface {
             System.out.print("Input:");
             int choice = Integer.parseInt(ms.nextLine());
             if (choice == 1) {
-                Registration.register();
+                NewGame.newGame();
                 break;
             }
             if (choice == 2) {
