@@ -16,17 +16,17 @@ public class NewGame {
 
         while (true) {
             System.out.println("Select Game Mode");
-            System.out.println("1. vs AI");
+            System.out.println("1. vs Annette (AI)");
             System.out.println("2. vs Another player");
             System.out.println("0. Return back to main menu");
 
             int choice = Integer.parseInt(ng.nextLine());
             if (choice == 1) {
-                //todo need to create new registerVsAi method
+                Registration.registerVsAI();
                 break;
             }
             if (choice == 2) {
-                Registration.register();
+                Registration.registerVsPlayer();
                 break;
             }
             if (choice == 0) {
@@ -34,8 +34,5 @@ public class NewGame {
                 break;
             }
         }
-
-
-
     }
 }
