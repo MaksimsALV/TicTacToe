@@ -49,7 +49,7 @@ public class Engine {
             } else {
                 System.out.println("Player 2 turn");
             }
-            BoardLogic.printBoard();
+            Board.printBoard();
             System.out.print("Input:");
             int choice = Integer.parseInt(ge.nextLine());
 
@@ -66,7 +66,7 @@ public class Engine {
 
         //Final board block
         System.out.println("Final board: ");
-        BoardLogic.printBoard();
+        Board.printBoard();
         //todo  clean relaunch of gameEngine() to start everything from zero again. if selecting Play Again
 
         System.out.println("==============================================");
