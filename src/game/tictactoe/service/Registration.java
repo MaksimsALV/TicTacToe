@@ -1,9 +1,7 @@
 package game.tictactoe.service;
 
 import game.tictactoe.game.Engine;
-import game.tictactoe.game.logic.BoardLogic;
-import game.tictactoe.repository.PlayerConstructor;
-import game.tictactoe.repository.PlayerStats;
+import game.tictactoe.service.constructor.PlayerConstructor;
 import game.tictactoe.repository.PlayerStorage;
 
 import java.util.Scanner;
@@ -24,7 +22,7 @@ public class Registration {
                 //String playerTwo = rvai.nextLine();
                 //PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
 
-            System.out.println(playerOne + " will play: X | Annette will play: O");
+            System.out.println(playerOne + " will play: " + 'X' + " | Annette will play: " + 'O');
 
             Engine.gameEngine();
             break;
@@ -48,7 +46,7 @@ public class Registration {
             String playerTwo = rvp.nextLine();
             PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
 
-            System.out.println(playerOne + " will play: X | " + playerTwo + " will play: O");
+            System.out.println(playerOne + " will play: " + 'X' + " | " + playerTwo + " will play: " + 'O');
 
             Engine.gameEngine();
             break;

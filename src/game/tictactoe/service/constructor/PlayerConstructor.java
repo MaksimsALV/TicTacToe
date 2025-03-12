@@ -1,4 +1,4 @@
-package game.tictactoe.repository;
+package game.tictactoe.service.constructor;
 
 public class PlayerConstructor {
     public String playerName;
