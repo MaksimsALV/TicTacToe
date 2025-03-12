@@ -1,25 +1,26 @@
 package game.tictactoe.game.logic;
 
+import game.tictactoe.game.Board;
 import game.tictactoe.repository.PlayerStats;
 import game.tictactoe.repository.PlayerStorage;
 
 public class WinnerLogic {
     public static boolean winningCondition(char symbol) {
         //horizontal check
-        if ((BoardLogic.board[0][0] == symbol && BoardLogic.board[0][1] == symbol && BoardLogic.board[0][2] == symbol) || // " || " -is logical OR operator
-                (BoardLogic.board[1][0] == symbol && BoardLogic.board[1][1] == symbol && BoardLogic.board[1][2] == symbol) ||
-                (BoardLogic.board[2][0] == symbol && BoardLogic.board[2][1] == symbol && BoardLogic.board[2][2] == symbol)) {
+        if ((Board.board[0][0] == symbol && Board.board[0][1] == symbol && Board.board[0][2] == symbol) || // " || " -is logical OR operator
+                (Board.board[1][0] == symbol && Board.board[1][1] == symbol && Board.board[1][2] == symbol) ||
+                (Board.board[2][0] == symbol && Board.board[2][1] == symbol && Board.board[2][2] == symbol)) {
             return true;
         }
         //vertical check
-        if ((BoardLogic.board[0][0] == symbol && BoardLogic.board[1][0] == symbol && BoardLogic.board[2][0] == symbol) ||
-                (BoardLogic.board[0][1] == symbol && BoardLogic.board[1][1] == symbol && BoardLogic.board[2][1] == symbol) ||
-                (BoardLogic.board[0][2] == symbol && BoardLogic.board[1][2] == symbol && BoardLogic.board[2][2] == symbol)) {
+        if ((Board.board[0][0] == symbol && Board.board[1][0] == symbol && Board.board[2][0] == symbol) ||
+                (Board.board[0][1] == symbol && Board.board[1][1] == symbol && Board.board[2][1] == symbol) ||
+                (Board.board[0][2] == symbol && Board.board[1][2] == symbol && Board.board[2][2] == symbol)) {
             return true;
         }
         //side check
-        if ((BoardLogic.board[0][0] == symbol && BoardLogic.board[1][1] == symbol && BoardLogic.board[2][2] == symbol) ||
-                (BoardLogic.board[0][2] == symbol && BoardLogic.board[1][1] == symbol && BoardLogic.board[2][0] == symbol)) {
+        if ((Board.board[0][0] == symbol && Board.board[1][1] == symbol && Board.board[2][2] == symbol) ||
+                (Board.board[0][2] == symbol && Board.board[1][1] == symbol && Board.board[2][0] == symbol)) {
             return true;
         }
         return false;
