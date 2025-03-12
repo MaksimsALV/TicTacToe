@@ -29,10 +29,18 @@ public class Engine {
         System.out.println("Game Rules:");
         System.out.println("First who get 3 same symbols in a row wins!");
         System.out.println("==============================================");
-        System.out.println(PlayerStorage.playersList.get(0).playerName + " plays " + PlayerStorage.playersList.get(0).playerSymbol);
-        System.out.println(PlayerStorage.playersList.get(1).playerName + " plays " + PlayerStorage.playersList.get(1).playerSymbol);
-        System.out.println("==============================================");
 
+
+        //two-way route between two game modes
+        System.out.println(PlayerStorage.playersList.get(0).playerName + " plays " + PlayerStorage.playersList.get(0).playerSymbol);
+        if (PlayerStorage.playersList.size() > 1) {
+            System.out.println(PlayerStorage.playersList.get(1).playerName + " plays " + PlayerStorage.playersList.get(1).playerSymbol);
+        } else {
+            System.out.println(PlayerStorage.annette.playerName + " plays " + PlayerStorage.annette.playerSymbol);
+        }
+
+
+        System.out.println("==============================================");
         boolean playerOneTurn = true;
 
         while (true) {

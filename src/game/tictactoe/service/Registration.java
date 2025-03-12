@@ -17,9 +17,6 @@ public class Registration {
             String player = rvai.nextLine();
             PlayerStorage.playersList.add(new Constructor.PlayerConstructor(player, 'X'));
 
-            //summary
-            System.out.println(player + " will play: " + 'X' + " | " + PlayerStorage.annette + " will play: " + PlayerStorage.annette.playerSymbol);
-
             //launching gameEngine
             Engine.gameEngine();
             break;
@@ -42,9 +39,6 @@ public class Registration {
             System.out.print("Input:");
             String playerTwo = rvp.nextLine();
             PlayerStorage.playersList.add(new Constructor.PlayerConstructor(playerTwo, 'O'));
-
-            //summary
-            System.out.println(playerOne + " will play: " + 'X' + " | " + playerTwo + " will play: " + 'O');
 
             //launching gameEngine
             Engine.gameEngine();
