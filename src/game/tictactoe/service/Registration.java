@@ -18,7 +18,7 @@ public class Registration {
             PlayerStorage.playersList.add(new Constructor.PlayerConstructor(player, 'X'));
 
             //summary
-            System.out.println(player + " will play: " + 'X' + " | " + PlayerStorage.annette.AIName + " will play: " + PlayerStorage.annette.AISymbol);
+            System.out.println(player + " will play: " + 'X' + " | " + PlayerStorage.annette + " will play: " + PlayerStorage.annette.playerSymbol);
 
             //launching gameEngine
             Engine.gameEngine();
