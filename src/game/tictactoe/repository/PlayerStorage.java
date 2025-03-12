@@ -1,9 +1,11 @@
 package game.tictactoe.repository;
 
-import game.tictactoe.service.constructor.PlayerConstructor;
+import game.tictactoe.service.constructor.Constructor;
 
 import java.util.ArrayList;
 
 public class PlayerStorage {
-    public static ArrayList<PlayerConstructor> playersList = new ArrayList<>();
+    public static ArrayList<Constructor.PlayerConstructor> playersList = new ArrayList<>();
+
+    public static final Constructor.AnnetteConstructor annette = new Constructor.AnnetteConstructor("Annette", 'O');
 }

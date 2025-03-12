@@ -1,7 +1,7 @@
 package game.tictactoe.service;
 
 import game.tictactoe.game.Engine;
-import game.tictactoe.service.constructor.PlayerConstructor;
+import game.tictactoe.service.constructor.Constructor;
 import game.tictactoe.repository.PlayerStorage;
 
 import java.util.Scanner;
@@ -14,15 +14,11 @@ public class Registration {
 
             //register player
             System.out.print("Input:");
-            String playerOne = rvai.nextLine();
-            PlayerStorage.playersList.add(new PlayerConstructor(playerOne, 'X'));
+            String player = rvai.nextLine();
+            PlayerStorage.playersList.add(new Constructor.PlayerConstructor(player, 'X'));
 
-            //AI Annette
-            //todo Annette doesnt needs to be added to the list, she always will be existing, so I have to introduce new playertype AI.. and refactor repository
-                //String playerTwo = rvai.nextLine();
-                //PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
 
-            System.out.println(playerOne + " will play: " + 'X' + " | Annette will play: " + 'O');
+            System.out.println(player + " will play: " + 'X' + " | " + PlayerStorage.annette.AIName + " will play: " + PlayerStorage.annette.AISymbol);
 
             Engine.gameEngine();
             break;
@@ -38,13 +34,13 @@ public class Registration {
             System.out.println("Enter player 1 name");
             System.out.print("Input:");
             String playerOne = rvp.nextLine();
-            PlayerStorage.playersList.add(new PlayerConstructor(playerOne, 'X'));
+            PlayerStorage.playersList.add(new Constructor.PlayerConstructor(playerOne, 'X'));
 
             //register player 2
             System.out.println("Enter player 2 name");
             System.out.print("Input:");
             String playerTwo = rvp.nextLine();
-            PlayerStorage.playersList.add(new PlayerConstructor(playerTwo, 'O'));
+            PlayerStorage.playersList.add(new Constructor.PlayerConstructor(playerTwo, 'O'));
 
             System.out.println(playerOne + " will play: " + 'X' + " | " + playerTwo + " will play: " + 'O');
 
