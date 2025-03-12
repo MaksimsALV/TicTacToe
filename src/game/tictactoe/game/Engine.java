@@ -11,7 +11,21 @@ import java.util.Scanner;
 public class Engine {
     public static void gameEngine() {
         Scanner ge = new Scanner(System.in);
-        System.out.println("Lets play!");
+
+        try {
+            System.out.println("\nLaunching game...");
+            Thread.sleep(2000);
+            System.out.println("3...");
+            Thread.sleep(2000);
+            System.out.println("2...");
+            Thread.sleep(2000);
+            System.out.println("1...");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("\nLets play!");
         System.out.println("Game Rules:");
         System.out.println("First who get 3 same symbols in a row wins!");
         System.out.println("==============================================");
