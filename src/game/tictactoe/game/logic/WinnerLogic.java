@@ -2,7 +2,8 @@ package game.tictactoe.game.logic;
 
 import game.tictactoe.game.Board;
 import game.tictactoe.repository.PlayerStats;
-import game.tictactoe.repository.PlayerStorage;
+
+import game.tictactoe.service.Registration;
 
 public class WinnerLogic {
     public static boolean winningCondition(char symbol) {
@@ -28,11 +29,11 @@ public class WinnerLogic {
 
     public static void defineWinner() {
         if (winningCondition('X')) {
-            String winnerName = PlayerStorage.playersList.get(0).playerName;
+            String winnerName = Registration.playersList.get(0).playerName;
             System.out.println(winnerName + " Wins!");
             PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1); //firstly we put winnerName, then we call it with default value of 0 and then to modify with +1
         } else if (winningCondition('O')) {
-            String winnerName = PlayerStorage.playersList.get(1).playerName;
+            String winnerName = Registration.playersList.get(1).playerName;
             System.out.println(winnerName + " Wins!");
             PlayerStats.playerStats.put(winnerName, PlayerStats.playerStats.getOrDefault(winnerName, 0) + 1); //firstly we put winnerName, then we call it with default value of 0 and then to modify with +1
         }

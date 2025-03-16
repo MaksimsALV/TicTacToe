@@ -1,7 +1,8 @@
 package game.tictactoe.game;
 
 import game.tictactoe.game.logic.BoardLogic;
-import game.tictactoe.repository.PlayerStorage;
+
+import game.tictactoe.service.Registration;
 
 public class Engine {
     public static boolean playerOneTurn = true;
@@ -13,8 +14,8 @@ public class Engine {
 
     public static void playerSelection(int choice) {
         char symbol = playerOneTurn
-                ? PlayerStorage.playersList.get(0).playerSymbol
-                : PlayerStorage.playersList.get(1).playerSymbol;
+                ? Registration.playersList.get(0).playerSymbol
+                : Registration.playersList.get(1).playerSymbol;
 
         //update board after every cell
         BoardLogic.updateBoard(choice, symbol);

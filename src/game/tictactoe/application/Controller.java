@@ -1,8 +1,6 @@
 package game.tictactoe.application;
 
 import game.tictactoe.game.Engine;
-import game.tictactoe.game.logic.BoardLogic;
-import game.tictactoe.repository.PlayerStorage;
 import game.tictactoe.service.Registration;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -63,8 +61,8 @@ public class Controller {
         Button clickedButton = (Button) event.getSource();
         int choice = getChoiceFromButton(clickedButton);
         char symbol = Engine.playerOneTurn
-                ? PlayerStorage.playersList.get(0).playerSymbol
-                : PlayerStorage.playersList.get(1).playerSymbol;
+                ? Registration.playersList.get(0).playerSymbol
+                : Registration.playersList.get(1).playerSymbol;
 
         Engine.playerSelection(choice);
         clickedButton.setText(String.valueOf(symbol));

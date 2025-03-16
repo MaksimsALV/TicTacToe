@@ -1,4 +1,4 @@
-package game.tictactoe.service.constructor;
+package game.tictactoe.service;
 
 public class Constructor {
 
