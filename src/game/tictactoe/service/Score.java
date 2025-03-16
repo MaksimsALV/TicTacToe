@@ -1,10 +1,9 @@
 package game.tictactoe.service;
 
-import game.tictactoe.menu.Interface;
 import game.tictactoe.repository.PlayerStats;
 
 import java.util.Scanner;
-
+/*
 public class Score {
     public static void viewStats() {
         Scanner s = new Scanner(System.in);
@@ -23,3 +22,5 @@ public class Score {
         }
     }
 }
+
+ */

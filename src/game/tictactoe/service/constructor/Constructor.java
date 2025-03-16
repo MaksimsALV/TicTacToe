@@ -12,13 +12,6 @@ public class Constructor {
             this.playerSymbol = playerSymbol;
         }
     }
-
-    //Annette constructor
-    public static class AnnetteConstructor extends PlayerConstructor {
-        public AnnetteConstructor() {
-            super("Annette", 'O');
-        }
-    }
 }
 
 
