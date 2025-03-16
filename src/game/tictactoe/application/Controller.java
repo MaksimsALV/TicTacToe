@@ -47,6 +47,12 @@ public class Controller {
     private Button button9;
 
     @FXML
+    private TextField wonStatP1;
+
+    @FXML
+    private TextField wonStatP2;
+
+    @FXML
     void clickNewGame(ActionEvent event) {
         String playerOne = playerOneFieldId.getText();
         String playerTwo = playerTwoFieldId.getText();

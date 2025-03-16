@@ -4,6 +4,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.tictactoe.application.Controller">
    <children>
@@ -23,5 +24,9 @@
             <Button fx:id="button9" layoutX="85.0" layoutY="160.0" mnemonicParsing="false" onAction="#cellClick" prefHeight="75.0" prefWidth="75.0" />
          </children>
       </FlowPane>
+      <TextField fx:id="wonStatP1" layoutX="431.0" layoutY="31.0" prefHeight="25.0" prefWidth="29.0" />
+      <Text layoutX="390.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="won:" />
+      <Text layoutX="390.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="won:" />
+      <TextField fx:id="wonStatP2" layoutX="431.0" layoutY="70.0" prefHeight="25.0" prefWidth="29.0" />
    </children>
 </AnchorPane>
