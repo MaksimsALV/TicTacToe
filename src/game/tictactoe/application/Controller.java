@@ -51,7 +51,7 @@ public class Controller {
         String playerOne = playerOneFieldId.getText();
         String playerTwo = playerTwoFieldId.getText();
 
-        Registration.registerVsPlayer(playerOne, playerTwo);
+        Registration.pvp(playerOne, playerTwo);
         Engine.newGame();
         cleanBoard();
     }
