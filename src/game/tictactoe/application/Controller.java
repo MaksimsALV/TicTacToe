@@ -78,15 +78,42 @@ public class Controller {
     }
 
     private int getChoiceFromButton(Button button) {
-        if (button == button1) return 1;
-        else if (button == button2) return 2;
-        else if (button == button3) return 3;
-        else if (button == button4) return 4;
-        else if (button == button5) return 5;
-        else if (button == button6) return 6;
-        else if (button == button7) return 7;
-        else if (button == button8) return 8;
-        else if (button == button9) return 9;
+        if (button == button1) {
+            button1.setDisable(true);
+            return 1;
+        }
+        else if (button == button2) {
+            button2.setDisable(true);
+            return 2;
+        }
+        else if (button == button3) {
+            button3.setDisable(true);
+            return 3;
+        }
+        else if (button == button4) {
+            button4.setDisable(true);
+            return 4;
+        }
+        else if (button == button5) {
+            button5.setDisable(true);
+            return 5;
+        }
+        else if (button == button6) {
+            button6.setDisable(true);
+            return 6;
+        }
+        else if (button == button7) {
+            button7.setDisable(true);
+            return 7;
+        }
+        else if (button == button8) {
+            button8.setDisable(true);
+            return 8;
+        }
+        else if (button == button9) {
+            button9.setDisable(true);
+            return 9;
+        }
         return 0;
     }
 
