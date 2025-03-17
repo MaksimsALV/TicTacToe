@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 
 
 public class RegistrationScreenController {
+
     @FXML
     private Button newGameId;
 

@@ -23,6 +23,6 @@ public class BoardLogic {
         Board.board[1][0] = '4'; Board.board[1][1] = '5'; Board.board[1][2] = '6';
         Board.board[2][0] = '7'; Board.board[2][1] = '8'; Board.board[2][2] = '9';
     }
-
+//comment
 
 }
