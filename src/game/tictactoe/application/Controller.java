@@ -6,9 +6,7 @@ import game.tictactoe.service.Registration;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
 
 
 public class Controller {
@@ -20,7 +18,6 @@ public class Controller {
 
     @FXML
     private TextField playerTwoFieldId;
-
 
     @FXML
     private Button button1;
@@ -53,13 +50,18 @@ public class Controller {
     private TextField winnerField;
 
     @FXML
+    private TextField playerTurn;
+
+    @FXML
     void clickNewGame(ActionEvent event) {
         String playerOne = playerOneFieldId.getText();
         String playerTwo = playerTwoFieldId.getText();
 
         Registration.pvp(playerOne, playerTwo);
         Engine.newGame();
-        cleanBoard();
+        resetBoardFE();
+        playerTurn.setText(Registration.playersList.get(0).playerName); //will have to move it later somewhere else, it is needed here because after newgame is clicked, i have to return first player name
+        playerTurn.setDisable(true); //this also, but generally, this just disables the field
     }
 
     @FXML
@@ -75,6 +77,11 @@ public class Controller {
         if (WinnerLogic.winningCondition(symbol)) {
             winnerField.setText(WinnerLogic.defineWinner());
             winnerField.setDisable(true);
+        }
+        if (Engine.playerOneTurn) {
+            playerTurn.setText(Registration.playersList.get(0).playerName);
+        } else {
+            playerTurn.setText(Registration.playersList.get(1).playerName);
         }
     }
 
@@ -118,11 +125,22 @@ public class Controller {
         return 0;
     }
 
-    private void cleanBoard() {
-        Button[] buttons = {button1, button2, button3, button4, button5, button6, button7, button8, button9};
+    private void resetBoardFE() {
+        Button[] buttons = {
+                button1,
+                button2,
+                button3,
+                button4,
+                button5,
+                button6,
+                button7,
+                button8,
+                button9
+        };
         for (Button btn : buttons) {
             btn.setText("");
             btn.setDisable(false);
         }
     }
+
 }

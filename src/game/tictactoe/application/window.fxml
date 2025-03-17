@@ -27,5 +27,6 @@
       <Text layoutX="390.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="won:" />
       <Text layoutX="390.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="won:" />
       <TextField fx:id="winnerField" layoutX="443.0" layoutY="229.0" />
+      <TextField fx:id="playerTurn" layoutX="443.0" layoutY="134.0" />
    </children>
 </AnchorPane>

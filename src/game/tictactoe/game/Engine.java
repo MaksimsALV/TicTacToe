@@ -8,7 +8,7 @@ public class Engine {
     public static boolean playerOneTurn = true;
 
     public static void newGame() {
-        BoardLogic.resetBoard();
+        BoardLogic.resetBoardBE();
         playerOneTurn = true;
     }
 

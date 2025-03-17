@@ -35,6 +35,6 @@ public class WinnerLogic {
             String winnerName = Registration.playersList.get(1).playerName;
             return winnerName;
         }
-        return "";
+        return "draw!"; //todo need to create draw condition
     }
 }
