@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 
-public class Controller {
+public class RegistrationScreenController {
     @FXML
     private Button newGameId;
 
@@ -60,8 +60,10 @@ public class Controller {
         Registration.pvp(playerOne, playerTwo);
         Engine.newGame();
         resetBoardFE();
-        playerTurn.setText(Registration.playersList.get(0).playerName); //will have to move it later somewhere else, it is needed here because after newgame is clicked, i have to return first player name
-        playerTurn.setDisable(true); //this also, but generally, this just disables the field
+        if (playerTurn != null) {
+            playerTurn.setText(Registration.playersList.get(0).playerName); //will have to move it later somewhere else, it is needed here because after newgame is clicked, i have to return first player name
+            playerTurn.setEditable(false); //this also, but generally, this just disables the field
+        }
     }
 
     @FXML
@@ -76,7 +78,7 @@ public class Controller {
         clickedButton.setText(String.valueOf(symbol));
         if (WinnerLogic.winningCondition(symbol)) {
             winnerField.setText(WinnerLogic.defineWinner());
-            winnerField.setDisable(true);
+            winnerField.setEditable(false);
         }
         if (Engine.playerOneTurn) {
             playerTurn.setText(Registration.playersList.get(0).playerName);
@@ -138,8 +140,10 @@ public class Controller {
                 button9
         };
         for (Button btn : buttons) {
-            btn.setText("");
-            btn.setDisable(false);
+            if (btn != null) {
+                btn.setText("");
+                btn.setDisable(false);
+            }
         }
     }
 
