@@ -6,7 +6,9 @@ import game.tictactoe.service.Registration;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
 
 
 public class Controller {
@@ -48,10 +50,7 @@ public class Controller {
     private Button button9;
 
     @FXML
-    private TextField wonStatP1;
-
-    @FXML
-    private TextField wonStatP2;
+    private TextField winnerField;
 
     @FXML
     void clickNewGame(ActionEvent event) {
@@ -73,8 +72,10 @@ public class Controller {
 
         Engine.playerSelection(choice);
         clickedButton.setText(String.valueOf(symbol));
-        WinnerLogic.winningCondition(symbol);
-        WinnerLogic.defineWinner();
+        if (WinnerLogic.winningCondition(symbol)) {
+            winnerField.setText(WinnerLogic.defineWinner());
+            winnerField.setDisable(true);
+        }
     }
 
     private int getChoiceFromButton(Button button) {
