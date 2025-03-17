@@ -1,6 +1,7 @@
 package game.tictactoe.application;
 
 import game.tictactoe.game.Engine;
+import game.tictactoe.game.logic.WinnerLogic;
 import game.tictactoe.service.Registration;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -72,6 +73,8 @@ public class Controller {
 
         Engine.playerSelection(choice);
         clickedButton.setText(String.valueOf(symbol));
+        WinnerLogic.winningCondition(symbol);
+        WinnerLogic.defineWinner();
     }
 
     private int getChoiceFromButton(Button button) {
