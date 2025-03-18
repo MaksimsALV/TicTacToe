@@ -7,13 +7,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Run {
+    public static Stage primaryStage;
     public static void main(String[] args) {
         Platform.startup(() -> { //seems that it doesnt work without try/catch block, so had to add that one
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(Run.class.getResource("/game/tictactoe/application/RegistrationScreen.fxml"));
                 Parent root = fxmlLoader.load();
 
-                Stage primaryStage = new Stage();
+                primaryStage = new Stage();
                 primaryStage.setScene(new Scene(root, 600, 400)); //setting the window size
                 primaryStage.setTitle("Tic Tac Toe");
                 primaryStage.show(); //shows the window

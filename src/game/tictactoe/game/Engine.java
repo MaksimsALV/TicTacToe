@@ -17,11 +17,9 @@ public class Engine {
         Platform.runLater(() -> { //seems that it doesnt work without try/catch block, so had to add that one
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(Run.class.getResource("/game/tictactoe/application/BoardScreen.fxml"));
-                Parent root = fxmlLoader.load();
+                Parent newRoot = fxmlLoader.load();
 
-                Stage primaryStage = new Stage();
-                primaryStage.setScene(new Scene(root, 600, 400)); //setting the window size
-                primaryStage.show(); //shows the window
+                Run.primaryStage.getScene().setRoot(newRoot);
             } catch (Exception e) {
                 e.printStackTrace();
             }
