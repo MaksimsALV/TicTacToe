@@ -1,6 +1,7 @@
 package game.tictactoe.application;
 
 import game.tictactoe.game.Engine;
+import game.tictactoe.game.logic.BoardLogic;
 import game.tictactoe.game.logic.WinnerLogic;
 import game.tictactoe.service.Registration;
 import javafx.event.ActionEvent;
@@ -53,18 +54,34 @@ public class Controller {
     @FXML
     private TextField playerTurn;
 
+
     @FXML
     void clickNewGame(ActionEvent event) {
         String playerOne = playerOneFieldId.getText();
         String playerTwo = playerTwoFieldId.getText();
+
+        //validation for empty fields (we dont want to start the game without names)
+        if (playerOne.isEmpty() || playerTwo.isEmpty()) {
+            newGameId.setStyle("-fx-background-color: red;");
+            return;
+        }
 
         Registration.pvp(playerOne, playerTwo);
         Engine.newGame();
         resetBoardFE();
         if (playerTurn != null) {
             playerTurn.setText(Registration.playersList.get(0).playerName); //will have to move it later somewhere else, it is needed here because after newgame is clicked, i have to return first player name
-            playerTurn.setEditable(false); //this also, but generally, this just disables the field
         }
+    }
+
+    @FXML
+    void clickAnotherOne(ActionEvent event) {
+        resetBoardFE();
+        BoardLogic.resetBoardBE();
+        playerTurn.clear();
+        winnerField.clear();
+        enableAllButtons();
+        playerTurn.setText(Registration.playersList.get(0).playerName);
     }
 
     @FXML
@@ -80,11 +97,13 @@ public class Controller {
         if (WinnerLogic.winningCondition(symbol)) {
             winnerField.setText(WinnerLogic.defineWinner());
             winnerField.setEditable(false);
-        }
-        if (Engine.playerOneTurn) {
-            playerTurn.setText(Registration.playersList.get(0).playerName);
+            disableAllButtons();
         } else {
-            playerTurn.setText(Registration.playersList.get(1).playerName);
+            if (Engine.playerOneTurn) {
+                playerTurn.setText(Registration.playersList.get(0).playerName);
+            } else {
+                playerTurn.setText(Registration.playersList.get(1).playerName);
+            }
         }
     }
 
@@ -128,7 +147,31 @@ public class Controller {
         return 0;
     }
 
-    private void resetBoardFE() {
+    private void disableAllButtons(){
+        button1.setDisable(true);
+        button2.setDisable(true);
+        button3.setDisable(true);
+        button4.setDisable(true);
+        button5.setDisable(true);
+        button6.setDisable(true);
+        button7.setDisable(true);
+        button8.setDisable(true);
+        button9.setDisable(true);
+    }
+
+    private void enableAllButtons(){
+        button1.setDisable(false);
+        button2.setDisable(false);
+        button3.setDisable(false);
+        button4.setDisable(false);
+        button5.setDisable(false);
+        button6.setDisable(false);
+        button7.setDisable(false);
+        button8.setDisable(false);
+        button9.setDisable(false);
+    }
+
+    public void resetBoardFE() {
         Button[] buttons = {
                 button1,
                 button2,
@@ -147,5 +190,10 @@ public class Controller {
             }
         }
     }
-
+    public void setPlayerTurn(String playerName) {
+        if (playerTurn != null) {
+            playerTurn.setText(playerName);
+            playerTurn.setEditable(false);
+        }
+    }
 }
