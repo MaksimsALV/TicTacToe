@@ -77,24 +77,15 @@ public class Controller {
     }
 
     @FXML
-    void clickAnotherOne(ActionEvent event) {
-        resetBoardFE();
-        BoardLogic.resetBoardBE();
-        playerTurn.clear();
-        winnerField.clear();
-        enableAllButtons();
-        playerOneTurn = true;
-        playerTurn.setText(Registration.playersList.get(0).playerName);
-    }
-
-    @FXML
     void cellClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         int choice = getChoiceFromButton(clickedButton);
-        char symbol = playerOneTurn
-                ? Registration.playersList.get(0).playerSymbol
-                : Registration.playersList.get(1).playerSymbol;
-
+        char symbol;
+        if (playerOneTurn) {
+            symbol = Registration.playersList.get(0).playerSymbol;
+        } else {
+            symbol = Registration.playersList.get(1).playerSymbol;
+        }
 
         BoardLogic.updateBoard(choice, symbol);
         clickedButton.setText(String.valueOf(symbol));
@@ -106,13 +97,26 @@ public class Controller {
             disableAllButtons();
         } else {
             playerOneTurn = !playerOneTurn; //toggle between players
-            String nextPlayerName = playerOneTurn
-                    ? Registration.playersList.get(0).playerName
-                    : Registration.playersList.get(1).playerName;
-            playerTurn.setText(nextPlayerName);
+            String nextPlayerName;
+            if (playerOneTurn) {
+                nextPlayerName = Registration.playersList.get(0).playerName;
+            } else {
+                nextPlayerName = Registration.playersList.get(1).playerName;
             }
+            playerTurn.setText(nextPlayerName);
         }
+    }
 
+    @FXML
+    void clickAnotherOne(ActionEvent event) {
+        resetBoardFE();
+        BoardLogic.resetBoardBE();
+        playerTurn.clear();
+        winnerField.clear();
+        enableAllButtons();
+        playerOneTurn = true;
+        playerTurn.setText(Registration.playersList.get(0).playerName);
+    }
 
     private int getChoiceFromButton(Button button) {
         if (button == button1) {
@@ -154,7 +158,7 @@ public class Controller {
         return 0;
     }
 
-    private void disableAllButtons(){
+    private void disableAllButtons() { //for game over purposes
         button1.setDisable(true);
         button2.setDisable(true);
         button3.setDisable(true);
@@ -166,7 +170,7 @@ public class Controller {
         button9.setDisable(true);
     }
 
-    private void enableAllButtons(){
+    private void enableAllButtons() { //for new game purposes
         button1.setDisable(false);
         button2.setDisable(false);
         button3.setDisable(false);
