@@ -1,5 +1,6 @@
 package game.tictactoe.game.logic;
 
+import game.tictactoe.service.Export;
 import game.tictactoe.service.Registration;
 
 public class WinnerLogic {
@@ -25,11 +26,14 @@ public class WinnerLogic {
     }
 
     public static String defineWinner() {
+        String winnerName;
         if (winningCondition('X')) {
-            String winnerName = Registration.playersList.get(0).playerName;
+            winnerName = Registration.playersList.get(0).playerName;
+            Export.writeToCSV(winnerName);
             return winnerName;
         } else if (winningCondition('O')) {
-            String winnerName = Registration.playersList.get(1).playerName;
+            winnerName = Registration.playersList.get(1).playerName;
+            Export.writeToCSV(winnerName);
             return winnerName;
         }
         return "draw!"; //todo need to create draw condition
