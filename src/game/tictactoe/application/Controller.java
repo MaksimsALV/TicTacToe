@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 
 public class Controller {
 
+    public boolean playerOneTurn = true;
+
     @FXML
     private Button newGameId;
 
@@ -67,6 +69,7 @@ public class Controller {
         }
 
         Registration.pvp(playerOne, playerTwo);
+        playerOneTurn = true;
         Engine.newGame();
         resetBoardFE();
         if (playerTurn != null) {
@@ -81,6 +84,7 @@ public class Controller {
         playerTurn.clear();
         winnerField.clear();
         enableAllButtons();
+        playerOneTurn = true;
         playerTurn.setText(Registration.playersList.get(0).playerName);
     }
 
@@ -88,24 +92,28 @@ public class Controller {
     void cellClick(ActionEvent event) {
         Button clickedButton = (Button) event.getSource();
         int choice = getChoiceFromButton(clickedButton);
-        char symbol = Engine.playerOneTurn
+        char symbol = playerOneTurn
                 ? Registration.playersList.get(0).playerSymbol
                 : Registration.playersList.get(1).playerSymbol;
 
-        Engine.playerSelection(choice);
+
+        BoardLogic.updateBoard(choice, symbol);
         clickedButton.setText(String.valueOf(symbol));
+        clickedButton.setDisable(true);
+
         if (WinnerLogic.winningCondition(symbol)) {
             winnerField.setText(WinnerLogic.defineWinner());
             winnerField.setEditable(false);
             disableAllButtons();
         } else {
-            if (Engine.playerOneTurn) {
-                playerTurn.setText(Registration.playersList.get(0).playerName);
-            } else {
-                playerTurn.setText(Registration.playersList.get(1).playerName);
+            playerOneTurn = !playerOneTurn; //toggle between players
+            String nextPlayerName = playerOneTurn
+                    ? Registration.playersList.get(0).playerName
+                    : Registration.playersList.get(1).playerName;
+            playerTurn.setText(nextPlayerName);
             }
         }
-    }
+
 
     private int getChoiceFromButton(Button button) {
         if (button == button1) {

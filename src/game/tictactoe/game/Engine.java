@@ -31,18 +31,6 @@ public class Engine {
             }
         });
         BoardLogic.resetBoardBE();
-        playerOneTurn = true;
-    }
-
-    public static void playerSelection(int choice) {
-        char symbol = playerOneTurn
-                ? Registration.playersList.get(0).playerSymbol
-                : Registration.playersList.get(1).playerSymbol;
-
-        //update board after every cell
-        BoardLogic.updateBoard(choice, symbol);
-
-        //toggle turn after every players move
-        playerOneTurn = !playerOneTurn;
+        //playerOneTurn = true;
     }
 }
