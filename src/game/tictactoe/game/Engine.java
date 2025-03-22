@@ -8,8 +8,6 @@ import game.tictactoe.service.Registration;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class Engine {
     public static boolean playerOneTurn = true;
@@ -31,6 +29,5 @@ public class Engine {
             }
         });
         BoardLogic.resetBoardBE();
-        //playerOneTurn = true;
     }
 }
