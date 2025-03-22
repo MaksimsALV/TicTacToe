@@ -21,10 +21,10 @@
                 <Button fx:id="button9" focusTraversable="false" layoutX="85.0" layoutY="160.0" mnemonicParsing="false" onAction="#cellClick" prefHeight="75.0" prefWidth="75.0" />
             </children>
         </FlowPane>
-        <TextField fx:id="winnerField" alignment="CENTER" disable="true" editable="false" layoutX="26.0" layoutY="232.0" />
-        <TextField fx:id="playerTurn" alignment="CENTER" disable="true" editable="false" layoutX="26.0" layoutY="145.0" />
-      <Text layoutX="26.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player turn:" />
-      <Text layoutX="26.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winner:" />
-      <Button fx:id="anotherOne" focusTraversable="false" layoutX="275.0" layoutY="345.0" mnemonicParsing="false" onAction="#clickAnotherOne" text="Another one!" />
+        <TextField fx:id="winnerField" alignment="CENTER" disable="true" editable="false" layoutX="437.0" layoutY="288.0" />
+        <TextField fx:id="playerTurn" alignment="CENTER" disable="true" editable="false" layoutX="14.0" layoutY="284.0" />
+      <Text layoutX="60.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player turn" />
+      <Text layoutX="492.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Winner" />
+      <Button fx:id="anotherOne" focusTraversable="false" layoutX="257.0" layoutY="345.0" mnemonicParsing="false" onAction="#clickAnotherOne" text="Another one!" />
     </children>
 </AnchorPane>
