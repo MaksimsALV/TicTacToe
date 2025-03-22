@@ -2,7 +2,6 @@ package game.tictactoe.game.logic;
 
 import game.tictactoe.service.Registration;
 
-
 public class WinnerLogic {
     public static boolean winningCondition(char symbol) {
         //horizontal check

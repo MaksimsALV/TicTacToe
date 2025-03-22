@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 public class Engine {
-    public static boolean playerOneTurn = true;
 
     public static void newGame() {
         Platform.runLater(() -> { //seems that it doesnt work without try/catch block, so had to add that one
