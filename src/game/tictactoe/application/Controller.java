@@ -63,9 +63,12 @@ public class Controller {
 
         //validation for empty fields (we dont want to start the game without names)
         if (playerOne.isEmpty() || playerTwo.isEmpty()) {
-            newGameId.setStyle("-fx-background-color: red;");
+            newGameId.setText("Add Players First");
+            newGameId.setDisable(true);
             return;
         }
+        newGameId.setText("New Game");
+        newGameId.setDisable(false);
 
         Registration.pvp(playerOne, playerTwo);
         playerOneTurn = true;
