@@ -178,25 +178,18 @@ public class Controller {
         button9.setDisable(false);
     }
 
-    public void resetBoardFE() {
-        Button[] buttons = {
-                button1,
-                button2,
-                button3,
-                button4,
-                button5,
-                button6,
-                button7,
-                button8,
-                button9
-        };
-        for (Button btn : buttons) {
-            if (btn != null) {
-                btn.setText("");
-                btn.setDisable(false);
-            }
-        }
+    public void resetBoardFE() { //clearing text by setting empty string. Also seems that javafx bricks if i dont add != null statement
+        if (button1 != null) button1.setText("");
+        if (button2 != null) button2.setText("");
+        if (button3 != null) button3.setText("");
+        if (button4 != null) button4.setText("");
+        if (button5 != null) button5.setText("");
+        if (button6 != null) button6.setText("");
+        if (button7 != null) button7.setText("");
+        if (button8 != null) button8.setText("");
+        if (button9 != null) button9.setText("");
     }
+
     public void setPlayerTurn(String playerName) {
         if (playerTurn != null) {
             playerTurn.setText(playerName);
