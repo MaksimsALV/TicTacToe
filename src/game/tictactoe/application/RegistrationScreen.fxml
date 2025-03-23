@@ -7,7 +7,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.tictactoe.application.Controller">
    <children>
       <Button fx:id="newGameId" layoutX="263.0" layoutY="188.0" mnemonicParsing="false" onAction="#clickNewGame" text="New Game" />
-      <TextField fx:id="playerOneFieldId" layoutX="226.0" layoutY="78.0" promptText="Player One Name" />
-      <TextField fx:id="playerTwoFieldId" layoutX="226.0" layoutY="120.0" promptText="Player Two Name" />
+      <TextField fx:id="playerOneFieldId" layoutX="227.0" layoutY="77.0" promptText="Player One Name" />
+      <TextField fx:id="playerTwoFieldId" layoutX="227.0" layoutY="121.0" promptText="Player Two Name" />
    </children>
 </AnchorPane>
