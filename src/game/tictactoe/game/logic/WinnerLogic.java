@@ -36,6 +36,6 @@ public class WinnerLogic {
             Export.writeToCSV(winnerName);
             return winnerName;
         }
-        return "draw!"; //todo need to create draw condition
+        return ""; //just returning empty string
     }
 }
