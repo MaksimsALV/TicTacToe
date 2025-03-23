@@ -4,10 +4,13 @@ import game.tictactoe.game.Engine;
 import game.tictactoe.game.logic.BoardLogic;
 import game.tictactoe.game.logic.WinnerLogic;
 import game.tictactoe.service.Registration;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.util.Duration;
 
 public class Controller {
 
@@ -55,7 +58,6 @@ public class Controller {
     @FXML
     private TextField playerTurn;
 
-
     @FXML
     void clickNewGame(ActionEvent event) {
         String playerOne = playerOneFieldId.getText();
@@ -63,12 +65,14 @@ public class Controller {
 
         //validation for empty fields (we dont want to start the game without names)
         if (playerOne.isEmpty() || playerTwo.isEmpty()) {
-            newGameId.setText("Add Players First");
             newGameId.setDisable(true);
+            newGameId.setText("Add player names!");
+            new Timeline(new KeyFrame(Duration.seconds(1), e -> { //added "animation" to disable button and change the text for 1 second
+                newGameId.setDisable(false);
+                newGameId.setText("New Game");
+            })).play();
             return;
         }
-        newGameId.setText("New Game");
-        newGameId.setDisable(false);
 
         Registration.pvp(playerOne, playerTwo);
         playerOneTurn = true;
